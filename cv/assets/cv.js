@@ -287,8 +287,31 @@
   }
 
   /* =====================================================================
-     6. UI GLUE — clock, copy-to-clipboard toast, scroll spy
+     6. UI GLUE — clock, copy-to-clipboard toast, scroll spy, progress
      ===================================================================== */
+  function initScrollProgress() {
+    const bar = $("#scroll-progress");
+    if (!bar || reduce.matches) return;
+
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      bar.style.transform = `scaleX(${p})`;
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    update();
+  }
   function initClock() {
     const node = $("#clock");
     if (!node) return;
@@ -394,6 +417,7 @@
   function start() {
     initDust();
     initGlow();
+    initScrollProgress();
     initClock();
 
     initBoot(() => {
