@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Mohammed Bagdid — cybersecurity</title>
+<meta name="description" content="Mohammed Bagdid — learning cybersecurity in public. Blue team, Linux, networking, self-hosted AI. Projects, lab notes and a certification roadmap." />
+<link rel="stylesheet" href="./assets/style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2305070a'/><text x='16' y='23' font-size='18' font-family='monospace' font-weight='700' fill='%23ff2d55' text-anchor='middle'>//</text></svg>" />
+<script>document.documentElement.className += " js";</script>
+</head>
+<body>
+
+<a class="skip" href="#main">skip to content</a>
+<div id="glitch-overlay" aria-hidden="true"></div>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="./" aria-label="Home">
+      <span class="brand__mark" aria-hidden="true">//</span>
+      <span class="brand__txt">
+        <b data-scramble>MOHAMMED BAGDID</b>
+        <i>cybersecurity</i>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Sections">
+      <a class="nav__link" href="#projects" data-scramble>projects</a>
+      <a class="nav__link" href="#certs" data-scramble>certs</a>
+      <a class="nav__link" href="#reach" data-scramble>reach</a>
+    </nav>
+
+    <div class="head-tools">
+      <a class="btn-icon" href="https://github.com/bagdidmohammed534-coder" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+      </a>
+      <button id="theme-btn" class="btn-icon" type="button" aria-label="Toggle theme" title="Toggle day / night">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ticker -->
+  <div class="ticker" aria-hidden="true">
+    <span class="ticker__label">LIVE</span>
+    <div class="ticker__viewport"><div class="ticker__track" id="ticker-track"></div></div>
+  </div>
+</header>
+
+<!-- ============================= HERO ============================= -->
+<main id="main">
+  <section class="wrap hero" aria-labelledby="hero-title">
+    <div class="hero__left">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> learning in public · open to collab</p>
+      <h1 id="hero-title" class="hero__name">MOHAMMED BAGDID</h1>
+      <p class="hero__role">cybersecurity — <span class="accent">blue team</span> · <span class="accent">linux</span> · <span class="accent">local ai</span></p>
+      <p class="hero__lede">
+        Learning security from the inside out — how systems actually break, then
+        how to detect it. Everything here is built in public: labs, notes and the
+        tools I use to understand the stack underneath.
+      </p>
+      <div class="hero__cta">
+        <a class="btn" href="#projects">see the work <span aria-hidden="true">↓</span></a>
+        <button class="btn btn--ghost" id="copy-mail" type="button" data-copy="bagdidmohammed534@gmail.com">copy email</button>
+      </div>
+    </div>
+
+    <div class="hero__right">
+      <div class="term" role="img" aria-label="Terminal window showing profile summary">
+        <div class="term__bar">
+          <span class="term__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="term__title">~/portfolio — zsh</span>
+        </div>
+        <div class="term__body" id="term-body"></div>
+      </div>
+      <div class="term-meta">
+        <span>uptime <b id="uptime">00:00:00</b></span>
+        <span>status <b>learning</b></span>
+        <span>repos <b>1</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= PROJECTS ============================= -->
+  <section class="wrap section" id="projects" aria-labelledby="projects-title">
+    <div class="sec-head">
+      <h2 id="projects-title" class="sec-title"><span class="sec-num">01</span> // projects</h2>
+      <p class="sec-sub">built in public</p>
+    </div>
+    <div class="cards" id="project-list"></div>
+  </section>
+
+  <!-- ============================= CERTS ============================= -->
+  <section class="wrap section" id="certs" aria-labelledby="certs-title">
+    <div class="sec-head">
+      <h2 id="certs-title" class="sec-title"><span class="sec-num">02</span> // certifications &amp; roadmap</h2>
+      <p class="sec-sub">honest status — planned → studying → passed</p>
+    </div>
+    <ul class="certs" id="cert-list"></ul>
+  </section>
+
+  <!-- ============================= REACH ============================= -->
+  <section class="wrap section" id="reach" aria-labelledby="reach-title">
+    <div class="sec-head">
+      <h2 id="reach-title" class="sec-title"><span class="sec-num">03</span> // reach</h2>
+      <p class="sec-sub">signal over noise</p>
+    </div>
+    <div class="reach">
+      <a class="reach__row" href="mailto:bagdidmohammed534@gmail.com" data-scramble>
+        <span class="reach__k">email</span><span class="reach__v">bagdidmohammed534@gmail.com</span><span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="reach__row" href="https://github.com/bagdidmohammed534-coder" target="_blank" rel="noopener" data-scramble>
+        <span class="reach__k">github</span><span class="reach__v">@bagdidmohammed534-coder</span><span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="reach__row" href="https://bagdidmohammed534-coder.github.io" target="_blank" rel="noopener" data-scramble>
+        <span class="reach__k">portfolio</span><span class="reach__v">bagdidmohammed534-coder.github.io</span><span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <div class="foot__pgp">
+      <span class="foot__k">NOW</span>
+      <code>learning blue team · linux · local ai</code>
+    </div>
+    <p class="foot__note">no trackers · no analytics · <span id="year">2026</span></p>
+  </div>
+  <div class="wrap foot-rule" aria-hidden="true">
+    <span></span><b>// END OF TRANSMISSION</b><span></span>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="./assets/app.js" defer></script>
+</body>
+</html>
