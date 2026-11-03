@@ -25,9 +25,13 @@ const PROJECTS = [
 ];
 
 const CERTS = [
-  { name: "CompTIA Security+",        issuer: "CompTIA",        status: "planned", verify: null },
-  { name: "TryHackMe — SOC Level 1",  issuer: "TryHackMe",      status: "planned", verify: null },
-  { name: "eJPT",                     issuer: "INE Security",   status: "planned", verify: null },
+  { name: "AWS Academy Graduate – Cloud Foundations", issuer: "Amazon Web Services", status: "passed" },
+  { name: "React Basics",                                issuer: "Meta",                             status: "passed" },
+  { name: "React Native Developer",                    issuer: "Meta",                             status: "passed" },
+  { name: "The Unix Workbench",                        issuer: "Johns Hopkins University",        status: "passed" },
+  { name: "Interactivity with JavaScript",            issuer: "University of Michigan",          status: "passed" },
+  { name: "Foundations of Cybersecurity",            issuer: "—",                                status: "passed" },
+  { name: "Cyber Security: Applied Cryptography",    issuer: "—",                                status: "passed" },
 ];
 
 /* ------------------------------------------------------------ helpers */
@@ -407,7 +411,7 @@ function wireReveal() {
 function wireActiveNav() {
   const links = $$(".nav__link");
   const sections = links
-    .map((l) => document.querySelector(l.getAttribute("href")))
+    .map((l) => (l.getAttribute("href").startsWith("#") ? document.querySelector(l.getAttribute("href")) : null))
     .filter(Boolean);
   if (!sections.length || !("IntersectionObserver" in window)) return;
 
